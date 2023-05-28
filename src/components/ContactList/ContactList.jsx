@@ -7,9 +7,9 @@ export const ContactList = ({
 	return (
 		<List>
           {contactList.map(contact => (
-              <li key={contact.id} id={contact.id} onClick={onDelete}>{contact.name}
+              <li key={contact.id}>{contact.name}
                   <span>{contact.number}</span>
-                  <button type="button" >Delete</button>
+                  <button type="button" id={contact.id} onClick={onDelete}>Delete</button>
               </li>
           ))}
         </List>
