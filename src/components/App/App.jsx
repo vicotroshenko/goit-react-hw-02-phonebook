@@ -47,20 +47,18 @@ export class App extends Component  {
   };
 
   deleteContact = (event)=> {
-    console.dir(event.currentTarget.id);
     const { contacts } = this.state;
     const deletedContact = contacts.filter(({id})=> id !== event.currentTarget.id);
     this.setState({ contacts: [...deletedContact] });
   };
 
   render() {
-    const { contacts, filter } = this.state;
+    const { filter } = this.state;
     const filteredContacts = this.displayFilteredResults();
     return (
       <div>
         <h1>Phonebook</h1>
         <ContactForm 
-            contactsState={contacts}
             changeContacts={this.getContacts}
             />
         <h2>Contacts</h2>

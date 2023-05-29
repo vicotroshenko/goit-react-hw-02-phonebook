@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { Label } from './Filter.styled'
 
 
@@ -19,4 +20,9 @@ export class Filter extends Component {
     </Label>
 		)
 	}
+}
+
+Filter.propTypes ={
+  filterContacts: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
 }
