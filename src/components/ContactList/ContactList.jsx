@@ -7,10 +7,10 @@ export class ContactList extends Component {
         const { contactList, onDelete } = this.props;
         return (
             <List>
-              {contactList.map(contact => (
-                  <li key={contact.id}>{contact.name}
-                      <span>{contact.number}</span>
-                      <button type="button" id={contact.id} onClick={onDelete}>Delete</button>
+              {contactList.map(({id, name, number}) => (
+                  <li key={id}>{name}
+                      <span>{number}</span>
+                      <button type="button" onClick={()=>onDelete(id)}>Delete</button>
                   </li>
               ))}
             </List>

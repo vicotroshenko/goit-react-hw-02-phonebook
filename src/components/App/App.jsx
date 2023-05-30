@@ -46,9 +46,9 @@ export class App extends Component  {
     return filteredContacts;
   };
 
-  deleteContact = (event)=> {
+  deleteContact = (id)=> {
     const { contacts } = this.state;
-    const deletedContact = contacts.filter(({id})=> id !== event.currentTarget.id);
+    const deletedContact = contacts.filter(contact=> id !== contact.id);
     this.setState({ contacts: [...deletedContact] });
   };
 
